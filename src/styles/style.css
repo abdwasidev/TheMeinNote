@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,200;0,400;0,700;1,400&display=swap');
+
+:root {
+    --red: #ff5f52;
+    --green:  rgba(25, 135, 84, 1);
+    --blue: #6294ff;
+    --light: #FFFFFF;
+    --dark: #333333;
+    --background-color: #FFFFFF;
+}
+
+[data-theme='dark']{
+    --red: #ff5f52;
+    --green:  #6294ff;
+    --blue: rgba(25, 135, 84, 1);
+    --light: #333333;
+    --dark: #FFFFFF;
+    --background-color: #333333;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Albert Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--light);
+}
+
+input, textarea {
+    padding: 12px;
+    margin: 12px 0;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 4px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--green);
+    font-weight: bold;
+}
+
+a, a:visited {
+    color: var(--light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--title);
+    text-decoration: none;
+}
+
+.note-app__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    background-color: var(--light);
+    border-bottom: 1px solid #aaa;
+}
+
+.note-app__header h1, .note-app__header p  {
+    margin: 8px 0;
+    flex: 1;
+    color: var(--dark);
+}
+
+.not_found, .not_found > h3 {
+    color: var(--green);
+}
+
+.not_found .back_home, .back_home {
+    color: var(--blue);
+}
+
+.note-app__body {
+    background-color: var(--light);
+    margin: 0;
+    padding: 30px;
+}
+
+.note-app__body h2 {
+    width: 100%;
+    padding: 7px;
+    margin: 16px 0;
+    font-weight: normal;
+    text-align: center;
+    color: var(--green);
+    border-bottom: 2px solid var(--green);
+
+}
+
+.note-app__route-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    gap: 10px;
+}
+
+.note-app__route-button button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--green);
+    color: var(--light);
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.note-app__route-button button:hover{
+    background: var(--background-color);
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+.note-input {
+    margin: 0 auto;
+    margin-bottom: 48px;
+}
+
+.note-input input, .note-input textarea {
+    display: block;
+    width: 100%;
+    background-color: var(--light);
+    color: var(--blue);
+}
+
+.note-input__title {
+    /* font-size: 18px; */
+    font-weight: bold;
+}
+
+.note-input__title__char-limit {
+    font-size: 14px;
+    text-align: right;
+    color: var(--dark);
+}
+
+.note-input__body {
+    min-height: 175px;
+}
+
+.note-input button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: var(--green);
+    color: var(--light);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.note-input .note-submit {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: var(--green);
+    color: var(--light);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.note-search input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 17px;
+    background-color: var(--light);
+    color: var(--blue);
+}
+
+.notes-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(min-content, max-content);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.notes-list__empty-message {
+    color: var(--dark);
+}
+
+.note-item {
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green);
+}
+
+.note-item__content {
+    padding: 15px 12px;
+    flex: 1;
+}
+
+.note-item__detail {
+    padding: 20px 0px;
+}
+
+.note-item__detail > h3 {
+    color: var(--green);
+
+}
+
+.note-item__detail > p {
+    color: var(--dark);
+}
+
+.note-item__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+
+.note-item__date {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--light);
+}
+
+.note-item__body {
+    font-size: 16px;
+}
+
+.note-item__action {
+    display: flex;
+}
+
+.note-item__delete-button,.note-item__archive-button {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 8px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.note-item__delete-button {
+    padding: 8px;
+    border-radius: 5px;
+    background: var(--red);
+    color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-right: 5px;
+}
+
+.note-item__archive-button {
+    padding: 8px;
+    border-radius: 5px;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-left: 5px;
+}
+
+.note-item__archive-button:hover {
+    background-color: var(--light);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.note-item__delete-button:hover {
+    background-color: var(--light);
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.login-page h2, .register-page h2 {
+    font-weight: normal;
+}
+   
+.login-input, .register-input, .contact-input {
+    margin-top: 16px;
+}
+   
+.login-input input, .register-input input, .contact-input input {
+    display: block;
+    padding: 16px;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 24px;
+    background-color: transparent;
+    border: 2px dashed var(--dark);
+    border-radius: 8px;
+}
+
+.login-input button, .register-input button, .contact-input button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    font-size: 24px;
+    background-color: var(--green);
+    border: 2px dashed black;
+    border-radius: 8px;
+    margin: 16px 0;
+    color: white;
+}
+
+@media only screen and (min-width: 500px) {
+    .notes-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .notes-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* .note-search input {
+        min-width: 400px;
+    } */
+}
+
+@media only screen and (min-width: 800px) {
+    .notes-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
